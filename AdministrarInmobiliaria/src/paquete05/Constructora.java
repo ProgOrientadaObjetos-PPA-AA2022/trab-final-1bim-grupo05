@@ -10,5 +10,22 @@ package paquete05;
  * @author reroes
  */
 public class Constructora {
+    String nombre, id;
+    
+    
+    
+    public void establecerNombre(String c){
+        nombre = c;
+    }
+    public void establecerId(String c){
+        id = c;
+    }
+    
+    public String obtenerNombre(){
+        return nombre;
+    }
+    public String obtenerApellidos(){
+        return id;
+    }
     
 }

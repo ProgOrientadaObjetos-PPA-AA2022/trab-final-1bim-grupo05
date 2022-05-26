@@ -5,10 +5,28 @@
  */
 package paquete04;
 
+
 /**
  *
  * @author reroes
  */
 public class Ciudad {
+    String nombreC, provincia;
+    
+    
+    
+    public void establecerNombre(String c){
+        nombreC = c;
+    }
+    public void establecerProvincia(String c){
+        provincia = c;
+    }
+    
+    public String obtenerNombre(){
+        return nombreC;
+    }
+    public String obtenerApellidos(){
+        return provincia;
+    }
     
 }
