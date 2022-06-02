@@ -5,6 +5,7 @@
  */
 package paquete06;
 
+import java.io.Serializable;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
@@ -14,7 +15,7 @@ import paquete05.Constructora;
  *
  * @author reroes
  */
-public class Departamento {
+public class Departamento implements Serializable{ 
     public Propietario p;
     public double pMetro;
     public double nMetro;
@@ -26,6 +27,19 @@ public class Departamento {
     public String ubicacionD;
     public Constructora cons ;
     
+    
+    public Departamento(Propietario pp, double pm, double nm, double ali, 
+            Barrio bb, Ciudad cy,String nom,String ubi, Constructora cA){
+         p = pp;
+         pMetro = pm;
+         nMetro = nm;
+         alicuotaM = ali;
+         b = bb;
+         city = cy;
+         nombreD = nom;
+         ubicacionD = ubi;
+         cons = cA;
+    }
     
     public void establecerPropietario(Propietario c){
         p = c;
@@ -39,8 +53,8 @@ public class Departamento {
     public void establecerAlicuota(double c){
         alicuotaM = c;
     }
-    public void establecerCosto(double c){
-        costoF = c;
+    public void establecerCosto(){
+        costoF = (nMetro * pMetro) + (alicuotaM *12);
     }
     
     public void establecerBarrio(Barrio c){
@@ -59,8 +73,6 @@ public class Departamento {
     public void establecerUbicacion(String c){
         ubicacionD = c;
     }
-    
-    
     
     
     public Propietario obtenerPropietario(){
@@ -96,4 +108,15 @@ public class Departamento {
         return ubicacionD;
     }
     
+    
+    public String tostring(){
+        String cadena = "Departamentos\n";
+        cadena = String.format("%s\n%s\n%s\n%s\n%s\nPrecio por Metro: %.2f.\n"
+                + "Número de Metros: %.2f.\nAlicuota Mensual: %.2f.\nNúmero de Cuartos: %d.\n"
+                + "Nombre del Departamento: %s\nUbicación del Departamento: %s\n"
+                ,cadena,obtenerPropietario().tostring(),obtenerCiudad().tostring(),obtenerBarrio().tostring(),
+                obtenerConstructora().tostring(), obtenerPrecioMetro(), obtenerNumeroMetro(),
+                obtenerAlicuota(),obtenerNombre(),obtenerUbicacion());
+        return cadena;
+    }
 }

@@ -5,6 +5,7 @@
  */
 package paquete06;
 
+import java.io.Serializable;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
@@ -14,7 +15,7 @@ import paquete05.Constructora;
  *
  * @author reroes
  */
-public class Casa {
+public class Casa implements Serializable {
     public Propietario p;
     public double pMetro;
     public double nMetro;
@@ -24,8 +25,15 @@ public class Casa {
     public int numCuartos;
     public Constructora cons;
     
-    
-    
+    public Casa(Propietario pp, double pm, double nm, Barrio bb, Ciudad cy, int nC, Constructora cA){
+         p = pp;
+         pMetro = pm;
+         nMetro = nm;
+         b = bb;
+         city = cy;
+         numCuartos = nC;
+         cons = cA;
+    }
     
     public void establecerPropietario(Propietario c){
         p = c;
@@ -36,8 +44,8 @@ public class Casa {
     public void establecerNumeroMetro(double c){
         nMetro = c;
     }
-    public void establecerCosto(double c){
-        costo = c;
+    public void establecerCosto(){
+        costo = nMetro * pMetro;
     }
     
     public void establecerBarrio(Barrio c){
@@ -80,4 +88,13 @@ public class Casa {
         return cons;
     }
     
+    
+    public String tostring(){
+        String cadena = "Casa\n";
+        cadena = String.format("%s\n%s\n%s\n%s\n%s\nPrecio por Metro: %.2f.\n"
+                + "Número de Metros: %.2f.\nNúmero de Cuartos: %d.\n"
+                ,cadena,obtenerPropietario().tostring(),obtenerCiudad().tostring(),obtenerBarrio().tostring(),
+                obtenerConstructora().tostring(), obtenerPrecioMetro(), obtenerNumeroMetro(), obtenerNumeroCuartos());
+        return cadena;
+    }
 }

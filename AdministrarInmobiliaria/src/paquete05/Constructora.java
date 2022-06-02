@@ -5,14 +5,19 @@
  */
 package paquete05;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Constructora {
+public class Constructora implements Serializable{
     String nombre, id;
     
-    
+    public Constructora(String n,String i){
+        nombre =n ;
+        id  = i;
+    }
     
     public void establecerNombre(String c){
         nombre = c;
@@ -24,8 +29,14 @@ public class Constructora {
     public String obtenerNombre(){
         return nombre;
     }
-    public String obtenerApellidos(){
+    public String obtenerId(){
         return id;
     }
     
+    
+    public String tostring(){
+        String cadena = String.format("Nombre de la constructora: %s - Id de la constructora:"
+                + " %s.\n",obtenerNombre(), obtenerId() );
+        return cadena;
+    }
 }

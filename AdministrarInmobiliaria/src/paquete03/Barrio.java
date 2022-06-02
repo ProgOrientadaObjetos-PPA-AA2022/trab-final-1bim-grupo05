@@ -5,14 +5,19 @@
  */
 package paquete03;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Barrio {
+public class Barrio implements Serializable{
     String nombre, referencia;
     
-    
+    public Barrio(String n,String r){
+        nombre =n ;
+        referencia  = r;
+    }
     
     public void establecerNombre(String c){
         nombre = c;
@@ -24,8 +29,13 @@ public class Barrio {
     public String obtenerNombre(){
         return nombre;
     }
-    public String obtenerApellidos(){
+    public String obtenerReferencia(){
         return referencia;
     }
     
+    public String tostring(){
+        String cadena = String.format("Nombre del Barrio: %s - Referencia:"
+                + " %s. \n",obtenerNombre(), obtenerReferencia() );
+        return cadena;
+    }
 }

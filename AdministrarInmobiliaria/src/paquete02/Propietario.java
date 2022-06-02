@@ -5,14 +5,20 @@
  */
 package paquete02;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Propietario {
+public class Propietario implements Serializable{
     String nombre, apellido, identificacion;
     
-    
+    public Propietario(String n, String a, String i){
+        nombre = n;
+        apellido = a;
+        identificacion = i;
+    }
     
     public void establecerNombre(String c){
         nombre = c;
@@ -32,5 +38,13 @@ public class Propietario {
     }
     public String obtenerIdentificacion(){
         return identificacion;
+    }
+    
+    
+    public String tostring(){
+        String cadena = String.format("Nombre de propietario: %s - Apellido de Propietarios:"
+                + " %s - Identificación: %s. \n",obtenerNombre(), obtenerApellidos(),
+                obtenerIdentificacion() );
+        return cadena;
     }
 }

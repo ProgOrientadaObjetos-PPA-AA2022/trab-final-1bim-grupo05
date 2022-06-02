@@ -5,15 +5,20 @@
  */
 package paquete04;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author reroes
  */
-public class Ciudad {
+public class Ciudad implements Serializable {
     String nombreC, provincia;
     
-    
+    public Ciudad(String n,String p){
+        nombreC =n ;
+        provincia  = p;
+    }
     
     public void establecerNombre(String c){
         nombreC = c;
@@ -25,8 +30,14 @@ public class Ciudad {
     public String obtenerNombre(){
         return nombreC;
     }
-    public String obtenerApellidos(){
+    public String obtenerProvincia(){
         return provincia;
     }
     
+    
+    public String tostring(){
+        String cadena = String.format("Nombre de la Ciudad: %s - Provincia:"
+                + " %s \n",obtenerNombre(), obtenerProvincia() );
+        return cadena;
+    }
 }
