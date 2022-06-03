@@ -30,9 +30,9 @@ public class Ejecutor {
         int nC;
         double pMetro, nMetro;
         do {
-            opc = opciones();
+            opc = opciones(); //Menu
             switch (opc) {
-                case 1:
+                case 1: 
                     ingresarPropietarios(leer,p);
                     break;
                 case 2:
@@ -54,6 +54,7 @@ public class Ejecutor {
                     pMetro = 98.7;
                     nMetro = 130.4;
                     nC = 12;
+                    //Crear objeto casa
                     cA = new Casa(p, pMetro, nMetro, b, c, nC, construc);
                     cA.establecerCosto();
                     System.out.printf("%s\n",cA.tostring());
