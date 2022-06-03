@@ -136,7 +136,7 @@ public class LecturaArchivosDepa {
             for (int i = 0; i < obtenerListaDepartamento().size(); i++) {
             Departamento depar = obtenerListaDepartamento().get(i);
             cadena = String.format("%s (%d) %s \n", cadena, i + 1,
-                    depar.tostring());
+                    depar);
             }
         }else{
             cadena = "No se ha ingresado ningun departamento.";

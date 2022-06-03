@@ -16,16 +16,16 @@ import paquete05.Constructora;
  * @author reroes
  */
 public class Departamento implements Serializable{ 
-    public Propietario p;
-    public double pMetro;
-    public double nMetro;
-    public double alicuotaM;
-    public double costoF;
-    public Barrio b ;
-    public Ciudad city ;
-    public String nombreD;
-    public String ubicacionD;
-    public Constructora cons ;
+    private Propietario p;
+    private double pMetro;
+    private double nMetro;
+    private double alicuotaM;
+    private double costoF;
+    private Barrio b ;
+    private Ciudad city ;
+    private String nombreD;
+    private String ubicacionD;
+    private Constructora cons ;
     
     
     public Departamento(Propietario pp, double pm, double nm, double ali, 
@@ -108,14 +108,14 @@ public class Departamento implements Serializable{
         return ubicacionD;
     }
     
-    
-    public String tostring(){
+    @Override
+    public String toString(){
         String cadena = "Departamentos\n";
         cadena = String.format("%s\n%s\n%s\n%s\n%s\nPrecio por Metro: %.2f.\n"
                 + "Número de Metros: %.2f.\nAlicuota Mensual: %.2f.\nNúmero de Cuartos: %d.\n"
                 + "Nombre del Departamento: %s\nUbicación del Departamento: %s\n"
-                ,cadena,obtenerPropietario().tostring(),obtenerCiudad().tostring(),obtenerBarrio().tostring(),
-                obtenerConstructora().tostring(), obtenerPrecioMetro(), obtenerNumeroMetro(),
+                ,cadena,obtenerPropietario(),obtenerCiudad(),obtenerBarrio(),
+                obtenerConstructora(), obtenerPrecioMetro(), obtenerNumeroMetro(),
                 obtenerAlicuota(),obtenerNombre(),obtenerUbicacion());
         return cadena;
     }

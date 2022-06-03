@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author reroes
  */
 public class Propietario implements Serializable{
-    String nombre, apellido, identificacion;
+    private String nombre, apellido, identificacion;
     
     public Propietario(String n, String a, String i){
         nombre = n;
@@ -40,8 +40,8 @@ public class Propietario implements Serializable{
         return identificacion;
     }
     
-    
-    public String tostring(){
+    @Override
+    public String toString(){
         String cadena = String.format("Nombre de propietario: %s - Apellido de Propietarios:"
                 + " %s - Identificación: %s. \n",obtenerNombre(), obtenerApellidos(),
                 obtenerIdentificacion() );

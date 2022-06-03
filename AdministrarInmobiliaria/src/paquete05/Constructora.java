@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author reroes
  */
 public class Constructora implements Serializable{
-    String nombre, id;
+    private String nombre, id;
     
     public Constructora(String n,String i){
         nombre =n ;
@@ -33,8 +33,8 @@ public class Constructora implements Serializable{
         return id;
     }
     
-    
-    public String tostring(){
+    @Override
+    public String toString(){
         String cadena = String.format("Nombre de la constructora: %s - Id de la constructora:"
                 + " %s.\n",obtenerNombre(), obtenerId() );
         return cadena;

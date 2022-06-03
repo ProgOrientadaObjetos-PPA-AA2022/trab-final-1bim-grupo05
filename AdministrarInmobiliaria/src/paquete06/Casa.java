@@ -16,14 +16,14 @@ import paquete05.Constructora;
  * @author reroes
  */
 public class Casa implements Serializable {
-    public Propietario p;
-    public double pMetro;
-    public double nMetro;
-    public double costo;
-    public Barrio b;
-    public Ciudad city;
-    public int numCuartos;
-    public Constructora cons;
+    private Propietario p;
+    private double pMetro;
+    private double nMetro;
+    private double costo;
+    private Barrio b;
+    private Ciudad city;
+    private int numCuartos;
+    private Constructora cons;
     
     public Casa(Propietario pp, double pm, double nm, Barrio bb, Ciudad cy, int nC, Constructora cA){
          p = pp;
@@ -93,8 +93,8 @@ public class Casa implements Serializable {
         String cadena = "Casa\n";
         cadena = String.format("%s\n%s\n%s\n%s\n%s\nPrecio por Metro: %.2f.\n"
                 + "Número de Metros: %.2f.\nNúmero de Cuartos: %d.\n"
-                ,cadena,obtenerPropietario().tostring(),obtenerCiudad().tostring(),obtenerBarrio().tostring(),
-                obtenerConstructora().tostring(), obtenerPrecioMetro(), obtenerNumeroMetro(), obtenerNumeroCuartos());
+                ,cadena,obtenerPropietario(),obtenerCiudad(),obtenerBarrio(),
+                obtenerConstructora(), obtenerPrecioMetro(), obtenerNumeroMetro(), obtenerNumeroCuartos());
         return cadena;
     }
 }

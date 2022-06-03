@@ -34,8 +34,8 @@ public class Ciudad implements Serializable {
         return provincia;
     }
     
-    
-    public String tostring(){
+    @Override
+    public String toString(){
         String cadena = String.format("Nombre de la Ciudad: %s - Provincia:"
                 + " %s \n",obtenerNombre(), obtenerProvincia() );
         return cadena;

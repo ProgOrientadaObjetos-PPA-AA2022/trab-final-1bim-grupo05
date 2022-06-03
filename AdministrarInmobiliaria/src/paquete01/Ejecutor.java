@@ -201,7 +201,7 @@ public class Ejecutor {
         lectura.establecerPropietarioBuscado();
         propietario_Buscado = lectura.obtenerPropietarioBuscado();
         if (propietario_Buscado != null) {
-            System.out.printf("Propietario encontrado: \n %s\n\n", propietario_Buscado.tostring());
+            System.out.printf("Propietario encontrado: \n %s\n\n", propietario_Buscado);
             return propietario_Buscado;
         } else {
             System.out.println("Propietario no encontrado");
@@ -244,7 +244,7 @@ public class Ejecutor {
         lectura.establecerBarrioBuscado();
         barrio_buscar = lectura.obtenerBarrioBuscado();
         if (barrio_buscar != null) {
-            System.out.printf("Barrio encontrado %s\n", barrio_buscar.tostring());
+            System.out.printf("Barrio encontrado %s\n", barrio_buscar);
             return barrio_buscar;
         } else {
             System.out.println("Barrio no encontrado");
@@ -285,7 +285,7 @@ public class Ejecutor {
         lectura.establecerCiudadBuscado();
         ciudad_buscar = lectura.obtenerCiudadBuscado();
         if (ciudad_buscar != null) {
-            System.out.printf("Ciudad encontrado %s\n", ciudad_buscar.tostring());
+            System.out.printf("Ciudad encontrado %s\n", ciudad_buscar);
             return ciudad_buscar;
         } else {
             System.out.println("Ciudad no encontrado");
@@ -323,7 +323,7 @@ public class Ejecutor {
         lectura.establecerConstructorBuscado();
         cons_buscar = lectura.obtenerConstructoraBuscado();
         if (cons_buscar != null) {
-            System.out.printf("Constructora encontrado %s\n", cons_buscar.tostring());
+            System.out.printf("Constructora encontrado %s\n", cons_buscar);
             return cons_buscar;
         } else {
             System.out.println("Constructora no encontrada");
@@ -360,8 +360,9 @@ public class Ejecutor {
 
                     p = new Propietario(nombresPropie, apellidosPropie, identificacionPropie);
                     EscrituraArchivosPropietario archivoPropie = new EscrituraArchivosPropietario("datos/propietarios.dat");
-                    System.out.println(p.tostring());
-                    
+                    System.out.println("------------------------------------");
+                    System.out.println(p);
+                    System.out.println("------------------------------------");
                     archivoPropie.establecerRegistro(p);
                     archivoPropie.establecerSalida();
                     System.out.println("-------------------------------------------------------------");
@@ -385,7 +386,9 @@ public class Ejecutor {
 
                     b = new Barrio(nombresBar, referBar);
                     EscrituraArchivosBarrio archivoBar = new EscrituraArchivosBarrio("datos/barrios.dat");
-                    System.out.println(b.tostring());
+                    System.out.println("------------------------------------");
+                    System.out.println(b);
+                    System.out.println("------------------------------------");
                     archivoBar.establecerRegistro(b);
                     archivoBar.establecerSalida();
                     System.out.println("-------------------------------------------------------------");
@@ -410,10 +413,12 @@ public class Ejecutor {
 
                     c = new Ciudad(nombreCiu, provCiu);
                     EscrituraArchivosCiudad archivoCiu = new EscrituraArchivosCiudad("datos/ciudades.dat");
-                    System.out.println(c.tostring());
+                    System.out.println(c);
                     archivoCiu.establecerRegistro(c);
                     archivoCiu.establecerSalida();
-                    System.out.println(c.tostring());
+                    System.out.println("------------------------------------");
+                    System.out.println(c);
+                    System.out.println("------------------------------------");
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("Si desea ingresar un nuevo Ciudad escriba el número [0] ");
                     System.out.println("Si desea volver al menú escriba el número [1]");
@@ -434,10 +439,12 @@ public class Ejecutor {
 
                     construc = new Constructora(nombreCons, idCons);
                     EscrituraArchivosCons archivoCons = new EscrituraArchivosCons("datos/constructoras.dat");
-                    System.out.println(construc.tostring());
+                    System.out.println(construc);
                     archivoCons.establecerRegistro(construc);
                     archivoCons.establecerSalida();
-                    System.out.println(construc.tostring());
+                    System.out.println("------------------------------------");
+                    System.out.println(construc);
+                    System.out.println("------------------------------------");
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("Si desea ingresar un nuevo Propietario escriba el número [0] ");
                     System.out.println("Si desea volver al menú escriba el número [1]");

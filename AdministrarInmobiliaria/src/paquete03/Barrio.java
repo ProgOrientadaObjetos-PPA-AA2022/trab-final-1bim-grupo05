@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author reroes
  */
 public class Barrio implements Serializable{
-    String nombre, referencia;
+    private String nombre, referencia;
     
     public Barrio(String n,String r){
         nombre =n ;
@@ -33,7 +33,8 @@ public class Barrio implements Serializable{
         return referencia;
     }
     
-    public String tostring(){
+    @Override
+    public String toString(){
         String cadena = String.format("Nombre del Barrio: %s - Referencia:"
                 + " %s. \n",obtenerNombre(), obtenerReferencia() );
         return cadena;
