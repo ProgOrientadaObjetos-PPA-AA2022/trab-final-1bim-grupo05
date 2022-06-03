@@ -131,11 +131,12 @@ public class LecturaArchivosCasa {
     @Override
     public String toString() {
         String cadena = "Lista de Casas: \n";
+        
         if ((obtenerListaCasa().size()) >0){
             for (int i = 0; i < obtenerListaCasa().size(); i++) {
-            Casa casa1 = obtenerListaCasa().get(i);
+            Casa casa12 = obtenerListaCasa().get(i);
             cadena = String.format("%s (%d) %s \n",cadena, i + 1,
-                    casa1);
+                    casa12);
             return cadena;
             }
         }else{
