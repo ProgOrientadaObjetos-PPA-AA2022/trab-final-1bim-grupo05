@@ -5,6 +5,7 @@
  */
 package paquete01;
 
+import java.util.Locale;
 import java.util.Scanner;
 import paquete02.*;
 import paquete03.*;
@@ -34,6 +35,7 @@ public class Ejecutor {
             switch (opc) {
                 case 1: 
                     ingresarPropietarios(leer,p);
+                    opc = 0;
                     break;
                 case 2:
                     ingresarBarrio(leer,b);
@@ -46,20 +48,28 @@ public class Ejecutor {
                     
                     break;
                 case 5:
+                    
                     p = buscarP();
                     b = buscarB();
                     c = buscarC();
                     construc = buscarConstruc();
                     // se asigna el valor de numero de metros, precio de metros y numero de cuartos.
-                    pMetro = 98.7;
-                    nMetro = 130.4;
-                    nC = 12;
+                    leer.useLocale(Locale.US);
+                    System.out.print("Ingresar el precio por metro cuadrado: ");
+                    pMetro = leer.nextDouble();
+                    System.out.println("");
+                    System.out.print("Ingresar el numero de metros cuadrado: ");
+                    nMetro = leer.nextDouble();
+                    System.out.println("");
+                    System.out.print("Ingresar el número de cuartos: ");
+                    nC = leer.nextInt();
+                    System.out.println("");
                     //Crear objeto casa
                     cA = new Casa(p, pMetro, nMetro, b, c, nC, construc);
                     cA.establecerCosto();
-                    System.out.printf("%s\n",cA.tostring());
+                    System.out.printf("%s\n",cA);
                     EscrituraArchivosCasa archivo = new EscrituraArchivosCasa("datos/casas.dat");
-                    System.out.println(cA.tostring());
+                    System.out.println(cA);
                     
                     archivo.establecerRegistro(cA);
                     archivo.establecerSalida();
@@ -68,22 +78,33 @@ public class Ejecutor {
                     
                     break;
                 case 6:
+                    
                     p = buscarP();
                     b = buscarB();
                     c = buscarC();
                     construc = buscarConstruc();
-
-                    pMetro = 80.8;
-                    nMetro = 50.4;
-                    double alicuota = 276.89;
+                    leer.useLocale(Locale.US);
+                    // se asigna el valor de numero de metros, precio de metros y alicuota.
+                    System.out.print("Ingresar el precio por metro cuadrado: ");
+                    pMetro = leer.nextDouble();
+                    System.out.println("");
+                    System.out.print("Ingresar el numero de metros cuadrado: ");
+                    nMetro = leer.nextDouble();
+                    System.out.println("");
+                    System.out.print("Ingresar alicuota mensual: ");
+                    double alicuota = leer.nextDouble();
+                    System.out.println("");
+                    leer.nextLine();
                     System.out.println("Ingrese el nombre del Departamento: ");
                     String nombre = leer.nextLine();
                     System.out.println("Ingrese la ubicacion del Departamento: ");
                     String ubi = leer.nextLine();
                     d = new Departamento(p, pMetro, nMetro, alicuota, b, c, nombre, ubi, construc);
                     d.establecerCosto();
+                    
                     EscrituraArchivosDepa archivo1 = new EscrituraArchivosDepa("datos/departamentos.dat");
                     archivo1.establecerRegistro(d);
+                    
                     archivo1.establecerSalida();
                     break;
                 case 7:
@@ -177,7 +198,7 @@ public class Ejecutor {
         System.out.println("(4)Presentar listas de Constructoras. ");
         System.out.println("(5)Presentar listas de Casas. ");
         System.out.println("(6)Presentar listas de Departamentos.");
-        System.out.println("(7)Dejar de ingresar y enseñar listas.");
+        System.out.println("(7)Salir del programa.");
         System.out.println("--------------------------------------");
         System.out.println("--------------------------------------");
         System.out.print("Ingrese la opción que requerida: ");
@@ -349,8 +370,7 @@ public class Ejecutor {
         }
     }
     public static void ingresarPropietarios(Scanner leer, Propietario p){
-        int opc = 0;
-        
+        int opcion = 0;
         
             System.out.println("Ingrese el nombre del propietario: ");
                     String nombresPropie = leer.nextLine();
@@ -368,17 +388,17 @@ public class Ejecutor {
                     archivoPropie.establecerSalida();
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("Si desea ingresar un nuevo Propietario escriba el número [0] ");
-                    System.out.println("Si desea volver al menú escriba el número [1]");
-                    opc = leer.nextInt();
+                    System.out.println("Si desea volver al menú escriba elvolver a número [1]");
+                    opcion = leer.nextInt();
                     leer.nextLine();
                     System.out.println("-------------------------------------------------------------");
                     
-                    if (opc == 0) {
+                    if (opcion == 0) {
             ingresarPropietarios(leer,p);
         }
     }
     public static void ingresarBarrio(Scanner leer, Barrio b){
-        int opc = 0;
+        int opc1 = 0;
         
                     System.out.println("Ingrese el nombre del Barrio: ");
                     String nombresBar = leer.nextLine();
@@ -395,17 +415,17 @@ public class Ejecutor {
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("Si desea ingresar un nuevo Barrio escriba el número [0] ");
                     System.out.println("Si desea volver al menú escriba el número [1]");
-                    opc = leer.nextInt();
+                    opc1 = leer.nextInt();
                     leer.nextLine();
                     System.out.println("-------------------------------------------------------------");
                     
-                    if (opc == 0) {
+                    if (opc1 == 0) {
             ingresarBarrio(leer,b);
         }
     }
     
     public static void ingresarCiudad(Scanner leer, Ciudad c){
-        int opc = 0;
+        int opc1 = 0;
         
                     System.out.println("Ingrese el nombre de la ciudad: ");
                     String nombreCiu = leer.nextLine();
@@ -421,18 +441,18 @@ public class Ejecutor {
                     System.out.println(c);
                     System.out.println("------------------------------------");
                     System.out.println("-------------------------------------------------------------");
-                    System.out.println("Si desea ingresar un nuevo Ciudad escriba el número [0] ");
+                    System.out.println("Si desea ingresar una nueva Ciudad escriba el número [0] ");
                     System.out.println("Si desea volver al menú escriba el número [1]");
-                    opc = leer.nextInt();
+                    opc1 = leer.nextInt();
                     leer.nextLine();
                     System.out.println("-------------------------------------------------------------");
                     
-                    if (opc == 0) {
+                    if (opc1== 0) {
             ingresarCiudad(leer,c);
         }
     }
     public static void ingresarConstructora(Scanner leer, Constructora construc){
-        int opc = 0;
+        int opc1 = 0;
                     System.out.println("Ingrese el nombre de la Constructora: ");
                     String nombreCons = leer.nextLine();
                     System.out.println("Ingrese el id de la Constructora: ");
@@ -447,13 +467,13 @@ public class Ejecutor {
                     System.out.println(construc);
                     System.out.println("------------------------------------");
                     System.out.println("-------------------------------------------------------------");
-                    System.out.println("Si desea ingresar un nuevo Propietario escriba el número [0] ");
+                    System.out.println("Si desea ingresar una nueva constructora escriba el número [0] ");
                     System.out.println("Si desea volver al menú escriba el número [1]");
-                    opc = leer.nextInt();
+                    opc1 = leer.nextInt();
                     leer.nextLine();
                     System.out.println("-------------------------------------------------------------");
                     
-                    if (opc == 0) {
+                    if (opc1 == 0) {
             ingresarConstructora(leer,construc);
         }
     }

@@ -48,6 +48,7 @@ public class EscrituraArchivosCasa{
     }
     public void establecerRegistro(Casa n){
         registro = n;
+        establecerLista();
     }
     public void establecerLista(){
         LecturaArchivosCasa l = new LecturaArchivosCasa(obtenerNombre());

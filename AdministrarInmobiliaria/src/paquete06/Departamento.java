@@ -110,9 +110,9 @@ public class Departamento implements Serializable{
     
     @Override
     public String toString(){
-        String cadena = "Departamentos\n";
+        String cadena = "Departamentos:\n";
         cadena = String.format("%s\n%s\n%s\n%s\n%s\nPrecio por Metro: %.2f.\n"
-                + "Número de Metros: %.2f.\nAlicuota Mensual: %.2f.\nNúmero de Cuartos: %d.\n"
+                + "Número de Metros: %.2f.\nAlicuota Mensual: %.2f.\n"
                 + "Nombre del Departamento: %s\nUbicación del Departamento: %s\n"
                 ,cadena,obtenerPropietario(),obtenerCiudad(),obtenerBarrio(),
                 obtenerConstructora(), obtenerPrecioMetro(), obtenerNumeroMetro(),

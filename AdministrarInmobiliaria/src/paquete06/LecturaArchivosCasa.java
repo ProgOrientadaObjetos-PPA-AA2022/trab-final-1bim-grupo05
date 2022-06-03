@@ -135,7 +135,7 @@ public class LecturaArchivosCasa {
             for (int i = 0; i < obtenerListaCasa().size(); i++) {
             Casa casa1 = obtenerListaCasa().get(i);
             cadena = String.format("%s (%d) %s \n",cadena, i + 1,
-                    casa1.tostring());
+                    casa1);
             return cadena;
             }
         }else{

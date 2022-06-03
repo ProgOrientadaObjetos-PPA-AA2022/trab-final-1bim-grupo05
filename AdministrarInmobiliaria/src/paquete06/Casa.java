@@ -88,8 +88,8 @@ public class Casa implements Serializable {
         return cons;
     }
     
-    
-    public String tostring(){
+    @Override
+    public String toString(){
         String cadena = "Casa\n";
         cadena = String.format("%s\n%s\n%s\n%s\n%s\nPrecio por Metro: %.2f.\n"
                 + "Número de Metros: %.2f.\nNúmero de Cuartos: %d.\n"
